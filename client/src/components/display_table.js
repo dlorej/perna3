@@ -11,7 +11,7 @@ const DisplayTable = () => {
         }
     };
     useEffect(() => {
-        getTodos();
+        getInfo();
     }, []);
     return <div>{JSON.stringify(info)}</div>;
 };
