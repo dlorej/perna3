@@ -4,7 +4,9 @@ const DisplayTable = () => {
     const getInfo = async () => {
         try {
             const response = await fetch("/getall");
+            console.log(response);
             const responseData = await response.json();
+            console.log(responseData);
             setInfo(responseData);
         } catch (err) {
             console.log(err);
@@ -13,6 +15,6 @@ const DisplayTable = () => {
     useEffect(() => {
         getInfo();
     }, []);
-    return <div>{JSON.stringify(info)}</div>;
+    return <div>info: {info}</div>;
 };
 export default DisplayTable;
