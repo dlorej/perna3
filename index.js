@@ -17,7 +17,7 @@ if (process.env.NODE_ENV === "production") {
 app.get("/getall", async (req, res) => {
     try {
         const allTodos = await pool.query("SELECT * FROM todo");
-
+        console.log(allTodos, allTodos.rows);
         res.json(allTodos.rows);
     } catch (err) {
         console.error(err.message);
