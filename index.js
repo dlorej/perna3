@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const cors = require("cors");
+const pool = require("./db");
+const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
@@ -19,4 +22,8 @@ app.get("/getall", async (req, res) => {
     } catch (err) {
         console.error(err.message);
     }
+});
+
+app.listen(PORT, () => {
+    console.log(`Server is starting on port ${PORT}`);
 });
