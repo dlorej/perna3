@@ -3,7 +3,7 @@ const DisplayTable = () => {
     const [info, setInfo] = useState([]);
     const getInfo = async () => {
         try {
-            const response = await fetch("/todos");
+            const response = await fetch("/getall");
             const responseData = await response.json();
             setInfo(responseData);
         } catch (err) {
@@ -13,6 +13,6 @@ const DisplayTable = () => {
     useEffect(() => {
         getTodos();
     }, []);
-    return <div>JSON.stringify(info)</div>;
+    return <div>{JSON.stringify(info)}</div>;
 };
 export default DisplayTable;
